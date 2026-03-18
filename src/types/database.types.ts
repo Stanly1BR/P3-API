@@ -27,3 +27,9 @@ export interface Disciplina {
 
 export type CreateAlunoDTO = Omit<Aluno, 'id_aluno'>;
 export type UpdateAlunoDTO = Partial<CreateAlunoDTO>;
+
+export type CreateProfessorDTO = Omit<Professor, 'id_professor'>;
+export type UpdateProfessorDTO = Partial<CreateProfessorDTO>;
+
+export type CreateDisciplinaDTO = Omit<Disciplina, 'id_disciplina'>;
+export type UpdateDisciplinaDTO = Partial<CreateDisciplinaDTO>;
