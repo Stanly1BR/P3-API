@@ -1,8 +1,8 @@
-# P3-API
+# Academico-API
 
 ## 1. Visão Geral da API
 
-- Nome do projeto: `P3-API` (package: `p3-api`)
+- Nome do projeto: `Academico-API` (package: `p3-api`)
 - Propósito: backend RESTful para gestão acadêmica de instituição de ensino (alunos, professores, cursos, disciplinas, vínculos de cursas/leciona, títulos)
 - Principais funcionalidades:
   - CRUD completo para entidades: `alunos`, `professores`, `disciplinas`, `cursos`, `instituicao`, `titulo`, `tipoCurso`, `tipoDisciplina`
