@@ -1,0 +1,121 @@
+INSERT INTO tipo_curso (tx_descricao) VALUES
+    ('Bacharelado'),
+    ('Licenciatura'),
+    ('Tecnólogo'),
+    ('Pós-graduação Lato Sensu'),
+    ('Mestrado'),
+    ('Doutorado'),
+    ('Curso Técnico'),
+    ('Curso Profissionalizante'),
+    ('Extensão Universitária'),
+    ('MBA');
+
+INSERT INTO tipo_disciplina (tx_descricao) VALUES
+    ('Obrigatória'),
+    ('Optativa'),
+    ('Eletiva'),
+    ('Laboratório'),
+    ('Teórica'),
+    ('Prática'),
+    ('Teórico-Prática'),
+    ('Estágio'),
+    ('TCC'),
+    ('Atividade Complementar');
+
+INSERT INTO titulo (tx_descricao) VALUES
+    ('Graduado'),
+    ('Especialista'),
+    ('Mestre'),
+    ('Doutor'),
+    ('Pós-Doutor'),
+    ('Livre-Docente'),
+    ('Professor Emérito'),
+    ('Técnico'),
+    ('Bacharel'),
+    ('Licenciado');
+
+INSERT INTO instituicao (tx_sigla, tx_descricao) VALUES
+    ('USP', 'Universidade de São Paulo'),
+    ('UNICAMP', 'Universidade Estadual de Campinas'),
+    ('UFMG', 'Universidade Federal de Minas Gerais'),
+    ('UFRJ', 'Universidade Federal do Rio de Janeiro'),
+    ('UNESP', 'Universidade Estadual Paulista'),
+    ('PUC-SP', 'Pontifícia Universidade Católica de São Paulo'),
+    ('UFSC', 'Universidade Federal de Santa Catarina'),
+    ('UFRGS', 'Universidade Federal do Rio Grande do Sul'),
+    ('UFPR', 'Universidade Federal do Paraná'),
+    ('UnB', 'Universidade de Brasília');
+
+INSERT INTO curso (id_instituicao, id_tipo_curso, tx_descricao) VALUES
+    (1, 1, 'Ciência da Computação'),
+    (1, 1, 'Engenharia Civil'),
+    (2, 2, 'Matemática'),
+    (3, 3, 'Análise e Desenvolvimento de Sistemas'),
+    (4, 1, 'Medicina'),
+    (5, 4, 'Direito Tributário'),
+    (6, 1, 'Administração'),
+    (7, 5, 'Física'),
+    (8, 6, 'Química'),
+    (9, 1, 'Psicologia');
+
+INSERT INTO professor (id_titulo, tx_nome, tx_sexo, tx_estado_civil, dt_nascimento, tx_telefone) VALUES
+    (4, 'João Silva', 'm', 'c', '1975-03-15', '(11)98765-4321'),
+    (3, 'Maria Santos', 'f', 'c', '1980-07-22', '(11)97654-3210'),
+    (5, 'Pedro Oliveira', 'm', 's', '1968-11-30', '(21)96543-2109'),
+    (2, 'Ana Souza', 'f', 'd', '1985-05-10', '(31)95432-1098'),
+    (4, 'Carlos Lima', 'm', 'c', '1972-09-05', '(41)94321-0987'),
+    (3, 'Patrícia Ferreira', 'f', 's', '1988-12-18', '(51)93210-9876'),
+    (1, 'Roberto Alves', 'm', 'c', '1990-01-25', '(61)92109-8765'),
+    (4, 'Camila Rodrigues', 'f', 's', '1982-04-12', '(71)91098-7654'),
+    (5, 'Fernando Costa', 'm', 'c', '1970-08-08', '(81)90987-6543'),
+    (3, 'Juliana Martins', 'f', 'd', '1987-06-20', '(91)89876-5432');
+
+INSERT INTO disciplina (id_curso, id_tipo_disciplina, tx_sigla, tx_descricao, in_periodo, in_carga_horaria) VALUES
+    (1, 1, 'MAC101', 'Algoritmos e Programação', 1, 80),
+    (1, 1, 'MAC202', 'Estruturas de Dados', 2, 80),
+    (1, 2, 'MAC303', 'Inteligência Artificial', 5, 60),
+    (2, 1, 'ECV101', 'Cálculo I', 1, 90),
+    (2, 4, 'ECV202', 'Mecânica dos Solos', 3, 60),
+    (3, 1, 'MAT101', 'Geometria Analítica', 1, 60),
+    (4, 3, 'ADS101', 'Banco de Dados', 2, 80),
+    (5, 1, 'MED101', 'Anatomia', 1, 120),
+    (6, 5, 'DIR101', 'Direito Constitucional', 1, 60),
+    (7, 1, 'ADM101', 'Teoria da Administração', 1, 60);
+
+INSERT INTO aluno (tx_nome, tx_sexo, dt_nascimento) VALUES
+    ('Lucas Mendes', 'm', '2000-05-10'),
+    ('Beatriz Oliveira', 'f', '2001-08-15'),
+    ('Rafael Santos', 'm', '2000-12-22'),
+    ('Camila Souza', 'f', '2001-03-05'),
+    ('Gabriel Costa', 'm', '2000-07-18'),
+    ('Isabela Lima', 'f', '2001-11-30'),
+    ('Matheus Ferreira', 'm', '2000-09-25'),
+    ('Larissa Rodrigues', 'f', '2001-01-12'),
+    ('Thiago Almeida', 'm', '2000-04-08'),
+    ('Mariana Gomes', 'f', '2001-06-20');
+
+INSERT INTO leciona (id_professor, id_disciplina) VALUES
+    (1, 1),
+    (1, 2),
+    (2, 3),
+    (3, 4),
+    (4, 5),
+    (5, 6),
+    (6, 7),
+    (7, 8),
+    (8, 9),
+    (9, 10);
+
+INSERT INTO cursa (id_aluno, id_disciplina, in_ano, in_semestre, in_faltas, nm_nota1, nm_nota2, nm_nota3, bl_aprovado) VALUES
+    (1, 1, 2023, 1, 4, 8.5, 7.0, 9.0, true),
+    (1, 2, 2023, 2, 2, 9.0, 8.5, 9.5, true),
+    (2, 1, 2023, 1, 8, 6.0, 5.5, 7.0, true),
+    (2, 3, 2024, 1, 12, 4.5, 5.0, 6.0, false),
+    (3, 4, 2023, 1, 6, 7.5, 8.0, 8.5, true),
+    (4, 5, 2024, 1, 15, 3.0, 4.5, 5.0, false),
+    (5, 6, 2023, 2, 0, 10.0, 9.5, 10.0, true),
+    (6, 7, 2024, 1, 4, 8.0, 7.5, 8.5, true),
+    (7, 8, 2023, 2, 20, 2.5, 3.0, 4.0, false),
+    (8, 9, 2024, 1, 2, 9.5, 8.0, 9.0, true),
+    (9, 10, 2023, 1, 5, 7.0, 6.5, 8.0, true),
+    (10, 1, 2024, 1, 0, 9.0, 8.5, 9.5, true);
